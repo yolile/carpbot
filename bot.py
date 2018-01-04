@@ -70,8 +70,9 @@ def echo(bot):
         update_id = update.update_id + 1
         pos = random.randint(0, len(frases)-1)
         rand = random.randint(0, 10)
+        text_up = update.message.text.upper()
         if update.message is not None and update.message.text is not None \
-                and 'CARPINCHO' in update.message.text.upper():
+                and 'CARPINCHO' in text_up:
             if rand == 5:
                 if update.effective_user.username == 'BBQut':
                     update.message.reply_text('loba apestosa ')
@@ -82,7 +83,10 @@ def echo(bot):
                 if update.effective_user.username == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
                     update.message.reply_text('caraaancho')
             else:
-                update.message.reply_text(frases[pos])
+                if 'menstruación' in text_up or 'mestruacion' in text_up:
+                    update.message.reply_text('FFFFFFFFFFFFFFFF')
+                else:
+                    update.message.reply_text(frases[pos])
 
 if __name__ == '__main__':
     main()
