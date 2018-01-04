@@ -74,13 +74,13 @@ def echo(bot):
                 and 'CARPINCHO' in update.message.text.upper():
             text_up = update.message.text.lower()
             if rand == 5:
-                if update.effective_user.username == 'BBQut':
+                if update.message.effective_user.username == 'BBQut':
                     update.message.reply_text('loba apestosa ')
-                if update.effective_user.username == 'szalimben':
+                if update.message.effective_user.username == 'szalimben':
                     update.message.reply_text('puto lo que sos')
-                if update.effective_user.username == 'YohaLisnichuk':
+                if update.message.effective_user.username == 'YohaLisnichuk':
                     update.message.reply_text('claro que sí, Lady Lisnichuk')
-                if update.effective_user.username == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
+                if update.message.effective_user.username == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
                     update.message.reply_text('caraaancho')
             else:
                 if ('menstruación' in text_up) or ('menstruacion' in text_up):
