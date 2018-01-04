@@ -21,20 +21,13 @@ token = os.environ['TELEGRAM_TOKEN']
 #              ...
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""Simple Bot to reply to Telegram messages.
-This is built on the API wrapper, see echobot2.py to see the same example built
-on the telegram.ext bot framework.
-This program is dedicated to the public domain under the CC0 license.
-"""
-
-
 
 update_id = None
-frases = ['No puedo, tengo que salvar al mundo', 'cena en Paraguari?','Brenda buscame, tengo enfermo',
-          'jajajaa gran turismo', 'sounds like a plan', 'nice try', 'honey dew', 'vos sos de verdad?',
-          'costanera?', 'quieen le extraña al grupo random quien quien?', 'make sense', 'listo el pollo',
-          'sure', 'suena bien', 'que rarojo', 'o tenes miedo?', 'loro guardian ataca de nuevo',
-          'bueno mami', 'dont worry', 'dame comida', 'there was an attempt']
+frases_env = os.environ['FRASES_TOKEN']
+frases = frases_env.split(';')
+keyword = os.environ['BOT_KEYWORD']
+usernames_env = os.environ['USERNAMES']
+usernames = usernames_env.split(';')
 
 def main():
     """Run the bot."""
@@ -65,22 +58,23 @@ def echo(bot):
     """Echo the message the user sent."""
     global update_id
     global frases
+    global keyword
     # Request updates after the last update_id
     for update in bot.get_updates(offset=update_id, timeout=10):
         update_id = update.update_id + 1
         pos = random.randint(0, len(frases)-1)
         rand = random.randint(0, 10)
         if update.message is not None and update.message.text is not None \
-                and 'CARPINCHO' in update.message.text.upper():
+                and keyword in update.message.text.upper():
             text_up = update.message.text.lower()
             if rand == 5:
-                if update.message.from_user.username == 'BBQut':
+                if update.message.from_user.username == usernames[0]:
                     update.message.reply_text('loba apestosa ')
-                if update.message.from_user.username == 'szalimben':
+                if update.message.from_user.username == usernames[1]:
                     update.message.reply_text('puto lo que sos')
-                if update.message.from_user.username == 'YohaLisnichuk':
+                if update.message.from_user.username == usernames[2]:
                     update.message.reply_text('claro que sí, Lady Lisnichuk')
-                if update.message.from_user.username == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
+                if update.message.from_user.username == usernames[3] and rand == 1:
                     update.message.reply_text('caraaancho')
             else:
                 if ('menstruación' in text_up) or ('menstruacion' in text_up):
