@@ -34,7 +34,7 @@ frases = ['No puedo, tengo que salvar al mundo', 'cena en Paraguari?','Brenda bu
           'jajajaa gran turismo', 'sounds like a plan', 'nice try', 'honey dew', 'vos sos de verdad?',
           'costanera?', 'quieen le extraña al grupo random quien quien?', 'make sense', 'listo el pollo',
           'sure', 'suena bien', 'que rarojo', 'o tenes miedo?', 'loro guardian ataca de nuevo',
-          'bueno mami']
+          'bueno mami', 'dont worry', 'dame comida']
 
 def main():
     """Run the bot."""
@@ -69,7 +69,18 @@ def echo(bot):
     for update in bot.get_updates(offset=update_id, timeout=10):
         update_id = update.update_id + 1
         pos = random.randint(0, len(frases)-1)
-        if update.message is not None and 'Carpincho' in update.message.text:
+        rand = random.randint(0, 1)
+        if update.message is not None and 'CARPINCHO' in update.message.text.upper():
+            if rand == 1:
+                if update.effective_user.user_name == 'BBQut':
+                    update.message.reply_text('loba apestosa ')
+                if update.effective_user.user_name == 'szalimben':
+                    update.message.reply_text('puto lo que sos')
+                if update.effective_user.user_name == 'YohaLisnichuk':
+                    update.message.reply_text('claro que sí, Lady Lisnichuk')
+                if update.effective_user.user_name == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
+                    update.message.reply_text('caraaancho')
+            else:
                 update.message.reply_text(frases[pos])
 
 if __name__ == '__main__':
