@@ -84,7 +84,7 @@ def echo(bot):
                 if update.effective_user.username == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
                     update.message.reply_text('caraaancho')
             else:
-                if 'menstruación' in text_up or 'menstruacion' in text_up:
+                if ('menstruación' in text_up) or ('menstruacion' in text_up):
                     update.message.reply_text('FFFFFFFFFFFFFFFF')
                 else:
                     update.message.reply_text(frases[pos])
