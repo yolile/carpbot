@@ -73,6 +73,7 @@ def echo(bot):
         text_up = update.message.text.upper()
         if update.message is not None and update.message.text is not None \
                 and 'CARPINCHO' in text_up:
+            text_up = update.message.text.upper()
             if rand == 5:
                 if update.effective_user.username == 'BBQut':
                     update.message.reply_text('loba apestosa ')
@@ -83,7 +84,7 @@ def echo(bot):
                 if update.effective_user.username == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
                     update.message.reply_text('caraaancho')
             else:
-                if 'menstruación' in text_up or 'mestruacion' in text_up:
+                if 'menstruación' in text_up or 'menstruacion' in text_up:
                     update.message.reply_text('FFFFFFFFFFFFFFFF')
                 else:
                     update.message.reply_text(frases[pos])
