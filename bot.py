@@ -73,13 +73,13 @@ def echo(bot):
         if update.message is not None and update.message.text is not None \
                 and 'CARPINCHO' in update.message.text.upper():
             if rand == 1:
-                if update.effective_user.user_name == 'BBQut':
+                if update.effective_user.username == 'BBQut':
                     update.message.reply_text('loba apestosa ')
-                if update.effective_user.user_name == 'szalimben':
+                if update.effective_user.username == 'szalimben':
                     update.message.reply_text('puto lo que sos')
-                if update.effective_user.user_name == 'YohaLisnichuk':
+                if update.effective_user.username == 'YohaLisnichuk':
                     update.message.reply_text('claro que sí, Lady Lisnichuk')
-                if update.effective_user.user_name == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
+                if update.effective_user.username == 'Daaaaaaaaaaaaaaaaaaaaaaaaaaaaani' and rand == 1:
                     update.message.reply_text('caraaancho')
             else:
                 update.message.reply_text(frases[pos])
