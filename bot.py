@@ -34,7 +34,7 @@ frases = ['No puedo, tengo que salvar al mundo', 'cena en Paraguari?','Brenda bu
           'jajajaa gran turismo', 'sounds like a plan', 'nice try', 'honey dew', 'vos sos de verdad?',
           'costanera?', 'quieen le extraña al grupo random quien quien?', 'make sense', 'listo el pollo',
           'sure', 'suena bien', 'que rarojo', 'o tenes miedo?', 'loro guardian ataca de nuevo',
-          'bueno mami', 'dont worry', 'dame comida']
+          'bueno mami', 'dont worry', 'dame comida', 'there was an attempt']
 
 def main():
     """Run the bot."""
