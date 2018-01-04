@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-import redis
 import os
-import telebot
 import logging
 import telegram
 import random
